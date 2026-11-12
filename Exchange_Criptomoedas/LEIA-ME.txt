@@ -1,0 +1,39 @@
+EXCHANGE DE CRIPTOMOEDAS - CCP230
+=================================
+
+COMO COMPILAR
+  Coloque todos os arquivos .c e .h na mesma pasta e rode:
+
+      gcc *.c -o exchange
+
+  No Windows (MinGW/Code::Blocks) o comando e o mesmo; o executavel
+  gerado sera exchange.exe.
+
+COMO EXECUTAR
+      ./exchange        (Linux / macOS)
+      exchange.exe      (Windows)
+
+  Na primeira execucao o programa cria sozinho os arquivos .txt com
+  dados de exemplo:
+
+      Investidor de teste ....... CPF 12345678900  senha 123456
+      Administrador ............. CPF 00000000000  senha 000000
+      Moedas .................... Bitcoin, Ethereum e Ripple
+
+  Para comecar do zero, basta apagar os arquivos .txt da pasta.
+
+ARQUIVOS DO PROJETO
+  main.c            tela inicial (investidor ou administrador)
+  tipos.h           structs e constantes
+  utilitarios.c/.h  leitura do teclado, validacoes, formatacao
+  arquivos.c/.h     leitura e gravacao dos .txt e do extrato
+  moedas.c/.h       busca, listagem e atualizacao de cotacao
+  investidor.c/.h   login e menu do investidor
+  admin.c/.h        login e menu do administrador
+
+ARQUIVOS DE DADOS (gerados pelo programa)
+  investidores.txt        cpf;senha;nome;saldo em reais
+  carteiras.txt           cpf;sigla;quantidade de cada cripto
+  moedas.txt              sigla;nome;cotacao;taxa compra;taxa venda
+  admins.txt              cpf;senha;nome
+  extrato_<cpf>.txt       historico de operacoes de cada investidor
